@@ -1,43 +1,20 @@
-function Pokemoncard(){
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Pokemoncard(props: any) {
+  console.log(props.pokemon);
 
-    const pokemon = pokemonList[0];
+  const { pokemon } = props;
 
-    return (
+  return (
     <figure>
-        {pokemon.imgSrc ? (
-        <img src= {pokemon.imgSrc} alt={pokemon.name} />
-        ) : (
-            <p>???</p>
-        )}
-        
-        <figcaption>{pokemon.name}</figcaption>
+      {pokemon.imgSrc ? (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
+      ) : (
+        <p>???</p>
+      )}
+
+      <figcaption>{pokemon.name}</figcaption>
     </figure>
-    )
-  }
-  
+  );
+}
 
-
-  const pokemonList = [
-
-    {
-  
-      name: "bulbasaur",
-  
-      imgSrc:
-  
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  
-    },
-  
-    {
-  
-      name: "mew",
-  
-    },
-  
-  ];
-
-
-
-  
-  export default Pokemoncard;
+export default Pokemoncard;
