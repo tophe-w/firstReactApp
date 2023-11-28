@@ -1,9 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Pokemoncard(props: any) {
-  console.log(props.pokemon);
+import PropTypes from "prop-types";
 
-  const { pokemon } = props;
-
+function Pokemoncard({ pokemon }) {
   return (
     <figure>
       {pokemon.imgSrc ? (
@@ -11,10 +8,17 @@ function Pokemoncard(props: any) {
       ) : (
         <p>???</p>
       )}
-
       <figcaption>{pokemon.name}</figcaption>
     </figure>
   );
 }
 
+Pokemoncard.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired
+};
+
 export default Pokemoncard;
+

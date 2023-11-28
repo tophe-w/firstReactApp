@@ -3,11 +3,10 @@ import MyTitle from "./components/MyTitle";
 import PokemonCard from "./components/PokemonCard";
 
 function App() {
-  const selectedPokemon = pokemonList[0];
   return (
     <div>
       <MyTitle />
-      <PokemonCard pokemon={selectedPokemon}/>
+      <PokemonCard pokemon={pokemonList[0]} />
     </div>
   );
 }
